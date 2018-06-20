@@ -1,7 +1,7 @@
 <template>
 	<div id="tender">
 		<ul class="tzlists_ul">
-			<li v-for="(item,index) in listData" :key="index">
+			<li v-for="(item,index) in listData" :key="index" v-if='index<number'>
 			  <router-link tag="a" :to="'/tenderdetail/'+item.biao_index">
 			    <div class="tz_list_div">
 			      <div class="tz_left_status">
@@ -48,12 +48,20 @@ export default {
             skip:1
 		}
 	},
+	props:{
+		number:{
+			type:Number,
+			default:5
+		}
+	},
     created () {
     	this.fetchData();
     },
     mounted () {
-        // 添加滚动事件，检测滚动到页面底部
-        window.addEventListener('scroll', this.scrollBottom)
+    	if (this.number==5) {
+	        // 添加滚动事件，检测滚动到页面底部
+	        window.addEventListener('scroll', this.scrollBottom)
+    	};
     },
     methods: {
     	fetchData () {

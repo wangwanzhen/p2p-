@@ -4,7 +4,7 @@
 			<span slot="name">稀之分期</span>
 		</HeadView>
 		<BannerView :urlImg="url"></BannerView>
-		<TenderView></TenderView>
+		<TenderView :number="5"></TenderView>
 	</div>
 </template>
 

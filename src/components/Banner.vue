@@ -16,18 +16,18 @@ export default {
 	data() {
       return {
         swiperOption: {
-			slidesPerView: 1,
-			spaceBetween: 30,
-			loop: true,
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-			autoplay: {
-				delay: 3000,
-				stopOnLastSlide: false,
-				disableOnInteraction: false,
-			}
+    			slidesPerView: 1,
+    			spaceBetween: 30,
+    			loop: true,
+    			pagination: {
+    				el: '.swiper-pagination',
+    				clickable: true,
+    			},
+    			autoplay: {
+    				delay: 3000,
+    				stopOnLastSlide: false,
+    				disableOnInteraction: false,
+    			}
         },
         bannerData:[],
         dizhi:''
@@ -52,7 +52,6 @@ export default {
     			method: 'post',
     			url:URLS+this.urlImg,
     			data: {
-
     			}
     		}).then(function(response) {
 				_this.dizhi = 'http://'+response.data.data.dizhi;
